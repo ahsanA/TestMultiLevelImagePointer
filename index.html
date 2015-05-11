@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Test -Map</title>
+        <style>
+            .heighlight {
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="parentImage">
+            <img id="img" src="images/map.jpg" usemap="#parentImage" />
+        </div>
+
+        <map name="parentImage">
+            <area shape="rect"
+                  coords="500,500,700,560"
+                  onclick="showInteriorHelth()"
+                  class="heighlight" alt="Interior Helth"
+                  href="javascript:void(0)" />
+            <area shape="rect"
+                  coords="480,588,535,630"
+                  onclick="showFraserHelth()"
+                  class="heighlight" alt="Interior Helth"
+                  href="javascript:void(0)" />
+        </map>
+        
+        <map name="showInteriorHelth">
+            <area shape="rect"
+                  coords="210,170,280,200"
+                  onclick="showProfile()"
+                  class="heighlight" alt="Interior Helth"
+                  href="javascript:void(0)" />
+        </map>
+        <map name="showFraserHelth">
+            <area shape="rect"
+                  coords="550,380,500,350"
+                  onclick="showProfile()"
+                  class="heighlight" alt="Interior Helth"
+                  href="javascript:void(0)" />
+        </map>
+    </body>
+   
+</html>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script type="text/javascript">
+    function showInteriorHelth() {
+        $('#img').attr('src', 'images/interiorHelth.png');
+        $('#img').attr('usemap', '#showInteriorHelth');
+    }
+    function showFraserHelth() {
+        $('#img').attr('src', 'images/fraserHealth.png');
+        $('#img').attr('usemap', '#showFraserHelth');
+    }
+    function showProfile() {
+        window.location.replace('report.html');
+    }
+</script>
+
+<a href="javascript:void(0)" onclick="document.location.reload()">Go Back</a>
